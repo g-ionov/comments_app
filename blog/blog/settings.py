@@ -1,9 +1,12 @@
 from pathlib import Path
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+try:
+    from local_settings import *
+except ImportError:
+    pass
 
-SECRET_KEY = 'django-insecure--d@aa)p5*#3qmcwj8ql@(gtonnjik24)_l4+*v-@mz*md5ceh('
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = True
 
@@ -59,17 +62,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'blog.wsgi.application'
 
 
-
-DATABASES={
-   'default':{
-      'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'blog_comments',
-      'USER':'postgres',
-      'PASSWORD':'aaasss12345zxC',
-      'HOST':'localhost',
-      'PORT':'5432',
-   }
-}
 
 
 # Password validation
